@@ -1,4 +1,5 @@
 var utils           = require('./utils'),
+    notevil         = require('./vendor/notevil'),
     STR_SAVE_RE     = /"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'/g,
     STR_RESTORE_RE  = /"(\d+)"/g,
     NEWLINE_RE      = /\n/g,
@@ -21,7 +22,7 @@ var KEYWORDS =
         ',arguments,let,yield' +
         // allow using Math in expressions
         ',Math',
-        
+
     KEYWORDS_RE = new RegExp(["\\b" + KEYWORDS.replace(/,/g, '\\b|\\b') + "\\b"].join('|'), 'g'),
     REMOVE_RE   = /\/\*(?:.|\n)*?\*\/|\/\/[^\n]*\n|\/\/[^\n]*$|'[^']*'|"[^"]*"|[\s\t\n]*\.[\s\t\n]*[$\w\.]+|[\{,]\s*[\w\$_]+\s*:/g,
     SPLIT_RE    = /[^\w$]+/g,
@@ -93,7 +94,7 @@ function traceScope (path, compiler, data) {
 function makeGetter (exp, raw) {
     var fn
     try {
-        fn = new Function(exp)
+        fn = notevil.Function(exp)
     } catch (e) {
         utils.warn('Error parsing expression: ' + raw)
     }

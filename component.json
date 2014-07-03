@@ -33,6 +33,7 @@
         "src/directives/html.js",
         "src/directives/style.js",
         "src/directives/partial.js",
-        "src/directives/view.js"
+        "src/directives/view.js",
+        "src/vendor/notevil.js"
     ]
 }
