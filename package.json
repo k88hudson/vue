@@ -60,5 +60,8 @@
       "component.json",
       "*.md"
     ]
+  },
+  "dependencies": {
+    "notevil": "^0.8.1"
   }
 }

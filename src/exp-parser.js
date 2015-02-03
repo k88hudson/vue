@@ -1,5 +1,5 @@
 var utils           = require('./utils'),
-    notevil         = require('./vendor/notevil'),
+    notevil         = require('notevil'),
     STR_SAVE_RE     = /"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'/g,
     STR_RESTORE_RE  = /"(\d+)"/g,
     NEWLINE_RE      = /\n/g,

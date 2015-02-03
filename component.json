@@ -34,6 +34,6 @@
         "src/directives/style.js",
         "src/directives/partial.js",
         "src/directives/view.js",
-        "src/vendor/notevil.js"
+        "node_modules/notevil/index.js"
     ]
 }
